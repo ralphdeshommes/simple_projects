@@ -4,7 +4,7 @@ from time import sleep
 
 
 class charater:
-    def __init__(self,name,attack=None,defense = 0, health=100,dodge=5, potion=0,shit_talk=None):
+    def __init__(self,name,attack=None,defense = 0, health=100,dodge=5, potion=0,final_words=None):
 
         self.name = name
         self.attack = attack
@@ -12,7 +12,7 @@ class charater:
         self.health = health
         self.dodge = dodge
         self.potion = potion
-        self.shit_talk = shit_talk
+        self.final_words = final_words
 
 
 
@@ -75,7 +75,7 @@ def engaging_battle_player(player,enemy):
     
         
 
-slime_shit_talk = "a hero like you dont belong here"
+slime_final_words = "a hero like you dont belong here"
 
 hero_attacks = {
     "Justice kick": 12,
@@ -110,7 +110,7 @@ final_boss_attacks = {
 
 
 
-slime_charater = charater("slime",attack=slime_attacks,defense=5, potion=2, shit_talk=slime_shit_talk)
+slime_charater = charater("slime",attack=slime_attacks,defense=5, potion=2, final_words=slime_final_words)
 player_charater  = charater("hero",attack=hero_attacks,defense=5,potion=3)
 
 
@@ -149,7 +149,7 @@ def engaging_battle_enemy(enemy,player,chosen_attack=0):
     sleep(2)
     player.health = max(0,player.health - (enemy.attack[enemy_attack_key] - half_defense))
     if player.health == 0:
-        print(f"{enemy.name}: {enemy.shit_talk}")
+        print(f"{enemy.name}: {enemy.final_words}")
         print(f"{player.name} has been defeated, you lose")
         return
     

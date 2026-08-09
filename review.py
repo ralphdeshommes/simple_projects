@@ -26,7 +26,7 @@ my_charater = "3"
 my_integer = 6
 #print(int(my_charater) + my_integer)
 
-# integers
+# integer and floats
 divide = 5 / 2
 divide_int = 5 // 2
 
